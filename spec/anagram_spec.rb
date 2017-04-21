@@ -11,4 +11,7 @@ describe("String#anagram") do
   it("checks if the input is an anagram, and a palindrome") do
     expect("racecar".anagram('carrace')).to(eq("It's an anagram, AND a palindrome"))
   end
+  it("checks if a string of multiple words is an anagram") do
+    expect("Race car".anagram('Car race')).to(eq("It's an anagram, AND a palindrome"))
+  end
 end

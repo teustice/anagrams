@@ -1,7 +1,9 @@
 class String
   def anagram(test_string)
-    word_array = self.downcase.split('')
-    test_word_array = test_string.downcase.split('')
+    filtered_input = self.gsub(/\W+/, '').downcase
+
+    word_array = filtered_input.split('')
+    test_word_array = test_string.gsub(/\W+/, '').downcase.split('')
 
     match_counter = 0
     test_word_array.each do |letter|
@@ -11,7 +13,7 @@ class String
     end
 
     if match_counter == word_array.length
-      if self == self.reverse
+      if filtered_input == filtered_input.reverse
         "It's an anagram, AND a palindrome"
       else
         "It's an anagram!"
