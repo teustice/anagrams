@@ -27,7 +27,7 @@ class String
 
     if vowel_counter == 0
       "That is not a real word"
-    elsif match_array.length == word_array.length
+    elsif (match_array.length == word_array.length) && (word_array.length == test_word_array.length)
       filtered_input.palindrome_check
     else
       match_array.antigram
