@@ -19,7 +19,6 @@ class String
       if word_array.include?(letter)
         match_array.push(letter)
       end
-
       if ["a","e","i","o","u","y"].include?(letter)
         vowel_counter += 1
       end
@@ -32,7 +31,6 @@ class String
     else
       match_array.antigram
     end
-
   end
 end
 
