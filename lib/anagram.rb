@@ -11,7 +11,7 @@ class String
       if word_array.include?(letter)
         match_counter += 1
       end
-      
+
       if ["a","e","i","o","u","y"].include?(letter)
         vowel_counter += 1
       end
@@ -25,6 +25,10 @@ class String
       else
         "It's an anagram!"
       end
+    elsif match_counter == 0
+      "These words have no matching letters and are antigrams!"
+    else
+      "That is NOT an anagram!"
     end
 
   end

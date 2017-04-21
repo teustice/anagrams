@@ -17,4 +17,7 @@ describe("String#anagram") do
   it("checks if the input is an actual word") do
     expect("qwrt".anagram("trwq")).to(eq("That is not a real word"))
   end
+  it("checks if the input is an antigram") do
+    expect("hi".anagram("bye")).to(eq("These words have no matching letters and are antigrams!"))
+  end
 end
