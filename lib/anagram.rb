@@ -6,13 +6,20 @@ class String
     test_word_array = test_string.gsub(/\W+/, '').downcase.split('')
 
     match_counter = 0
+    vowel_counter = 0
     test_word_array.each do |letter|
       if word_array.include?(letter)
         match_counter += 1
       end
+      
+      if ["a","e","i","o","u","y"].include?(letter)
+        vowel_counter += 1
+      end
     end
 
-    if match_counter == word_array.length
+    if vowel_counter == 0
+      "That is not a real word"
+    elsif match_counter == word_array.length
       if filtered_input == filtered_input.reverse
         "It's an anagram, AND a palindrome"
       else
