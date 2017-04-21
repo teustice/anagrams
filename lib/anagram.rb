@@ -10,7 +10,13 @@ class String
       end
     end
 
-    true if match_counter == word_array.length
+    if match_counter == word_array.length
+      if self == self.reverse
+        "It's an anagram, AND a palindrome"
+      else
+        "It's an anagram!"
+      end
+    end
 
   end
 end
