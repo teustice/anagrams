@@ -1,4 +1,12 @@
 class String
+  def palindrome_check
+    if self == self.reverse
+      "It's an anagram, AND a palindrome"
+    else
+      "It's an anagram!"
+    end
+  end
+
   def anagram(test_string)
     filtered_input = self.gsub(/\W+/, '').downcase
 
@@ -20,16 +28,20 @@ class String
     if vowel_counter == 0
       "That is not a real word"
     elsif match_array.length == word_array.length
-      if filtered_input == filtered_input.reverse
-        "It's an anagram, AND a palindrome"
-      else
-        "It's an anagram!"
-      end
-    elsif match_array.length == 0
-      "These words have no matching letters and are antigrams!"
+      filtered_input.palindrome_check
     else
-      "That is not an anagram, but #{match_array.length} letters match: #{match_array.join(',')}."
+      match_array.antigram
     end
 
+  end
+end
+
+class Array
+  def antigram
+  if self.length == 0
+      "These words have no matching letters and are antigrams!"
+    else
+      "That is not an anagram, but #{self.length} letters match: #{self.join(',')}."
+    end
   end
 end
