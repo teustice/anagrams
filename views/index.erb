@@ -1,0 +1,14 @@
+<div class="form-group">
+  <h2>Type two words to see if they are anagrams!</h2>
+  <form action="/anagram-input">
+    <label for="main_text">Word 1:</label>
+    <input class="form-control" type="text" name="main_text">
+    <label for="test_text">Word 2:</label>
+    <input class="form-control" type="text" name="test_text">
+    <button class="btn btn-success" type="submit" name="button">Check!</button>
+  </form>
+</div>
+
+<div id="output">
+  <%= @result %>
+</div>
